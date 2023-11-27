@@ -127,10 +127,11 @@ sampler = DiffusionSampler(
 )
 
 def inference(text, ref_s, alpha = 0.3, beta = 0.7, diffusion_steps=5, embedding_scale=1, use_gruut=False):
-    text = text.strip()
-    ps = global_phonemizer.phonemize([text])
-    ps = word_tokenize(ps[0])
-    ps = ' '.join(ps)
+    # text = text.strip()
+    # ps = global_phonemizer.phonemize([text])
+    # ps = word_tokenize(ps[0])
+    # ps = ' '.join(ps)
+    ps = text
     tokens = textclenaer(ps)
     tokens.insert(0, 0)
     tokens = torch.LongTensor(tokens).to(device).unsqueeze(0)
