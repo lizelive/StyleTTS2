@@ -125,11 +125,12 @@ sampler = DiffusionSampler(
 )
 
 def inference(text, noise, diffusion_steps=5, embedding_scale=1):
-    text = text.strip()
-    text = text.replace('"', '')
-    ps = global_phonemizer.phonemize([text])
-    ps = word_tokenize(ps[0])
-    ps = ' '.join(ps)
+    # text = text.strip()
+    # text = text.replace('"', '')
+    # ps = global_phonemizer.phonemize([text])
+    # ps = word_tokenize(ps[0])
+    # ps = ' '.join(ps)
+    ps = text
 
     tokens = textclenaer(ps)
     tokens.insert(0, 0)
