@@ -13,6 +13,7 @@ import numpy as np
 np.random.seed(0)
 
 import nltk
+nltk.download('punkt_tab')
 nltk.download('punkt')
 
 # load packages
