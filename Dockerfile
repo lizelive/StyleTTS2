@@ -8,7 +8,7 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     rm -f /etc/apt/apt.conf.d/docker-clean \
     && apt-get update \
     && apt-get -y --no-install-recommends install \
-    espeak-ng
+    espeak-ng ffmpeg
 
 
 # install python dependencies from requirements.txt
