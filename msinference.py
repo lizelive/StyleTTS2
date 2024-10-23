@@ -2,6 +2,7 @@ from cached_path import cached_path
 import nltk
 
 nltk.download("punkt")
+nltk.download('punkt_tab')
 from scipy.io.wavfile import write
 import torch
 
