@@ -80,24 +80,11 @@ with gr.Blocks() as lj:
             ljbtn = gr.Button("Synthesize", variant="primary")
             ljaudio = gr.Audio(interactive=False, label="Synthesized Audio")
             ljbtn.click(ljsynthesize, inputs=[ljinp], outputs=[ljaudio], concurrency_limit=4)
-with gr.Blocks(title="StyleTTS 2", css="footer{display:none !important}", theme=theme) as demo:
-    gr.Markdown("""# StyleTTS 2
-
-[Paper](https://arxiv.org/abs/2306.07691) - [Samples](https://styletts2.github.io/) - [Code](https://github.com/yl4579/StyleTTS2)
-
-GUI of StyleTTS 2 by [mrfakename](https://twitter.com/realmrfakename).
-
-#### Help the StyleTTS 2 space get to the top of HF Trending! [Give it a Like!](https://huggingface.co/spaces/styletts2/styletts2)
-
-**Before using this demo, you agree to inform the listeners that the speech samples are synthesized by the pre-trained models, unless you have the permission to use the voice you synthesize. That is, you agree to only use voices whose speakers grant the permission to have their voice cloned, either directly or by license before making synthesized voices public, or you have to publicly announce that these voices are synthesized if you do not have the permission to use these voices.**
-
-**NOTE: StyleTTS 2 does better on longer texts.** For example, making it say "hi" will produce a lower-quality result than making it say a longer phrase.""")
+with gr.Blocks(title="StyleTTS 2", theme=theme) as demo:
     gr.TabbedInterface([vctk, clone, lj], ['Multi-Voice', 'Voice Cloning', 'LJSpeech'])
-    gr.Markdown("""
-Demo by [mrfakename](https://twitter.com/realmrfakename). I am not affiliated with the StyleTTS 2 authors.
 
-This is the local version of the demo
-""")
+    
+API=True
 if __name__ == "__main__":
-    demo.queue(api_open=False, max_size=15).launch(show_api=False)
+    demo.queue(api_open=API, max_size=15).launch(show_api=API)
 

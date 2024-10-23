@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/devcontainers/python:3.11
+# FROM mcr.microsoft.com/devcontainers/python:3.11
+FROM docker.io/library/python:3.11
 
 # install apt dependencies from requirements.txt
 
